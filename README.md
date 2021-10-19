@@ -24,3 +24,4 @@ Tabela | numer 1
 ``` python
 print("Hello World")
 ```
+![Pies](/Laboratorium_2/dog.jpg)
