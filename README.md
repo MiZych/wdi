@@ -14,10 +14,13 @@ Laboratorium 2
 1. agh
 2. wiet
 
-``` python
-print("Hello World")
+
 
 Tabela | numer 1
 ------ | -------
 1,2,3 | 4,5,6
 7,8,9 | 10,11,12
+
+``` python
+print("Hello World")
+```
