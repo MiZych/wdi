@@ -12,19 +12,23 @@ while True:
         resolve = ((0 - third) / second)
         print("Rozwiązaniem równania liniowego jest x =", resolve)
     else:
-        if delta < 0:
-            try:
-                sqrt_delta = sqrt(delta)
-            except ValueError:
-                print("Program nie obsługuje liczb zespolonych")
-        else:
-            sqrt_delta = sqrt(delta)
-            x1 = ((-second + sqrt_delta) / 2 * first)
-            x2 = ((-second - sqrt_delta) / 2 * first)
+        try:
+            x1 = ((-second + sqrt(delta)) / (2 * first))
+            x2 = ((-second - sqrt(delta)) / (2 * first))
             if x1 == x2:
                 print("Pierwiastakami równania:", str(first) + "x^2", "+", str(second) + "x", "+", third, "to: ", x1)
             else:
-                print("Pierwiastakami równania:", str(first) + "x^2", "+", str(second) + "x", "+", third, "to: ", x1, x2)
+                print("Pierwiastakami równania:", str(first) + "x^2", "+", str(second) + "x", "+", third, "to: ", x1,
+                      x2)
+            raise ValueError()
+        except ValueError:
+            print("Program nie obsługuje liczb zespolonych")
+
     what_to_do = input("Co chcesz dalej zrobić? \n T - Kontynuacja programu \n N - Koniec działania programu \n >")
     if what_to_do == "N":
         break
+
+#Przypadki testowe:
+#a = 0: 2x -2 wynik to: 1
+#delta > 0: 2x^2 + 8x -10 wynnik to: 1 i -5
+#delta = 0: x^2 + 6x + 9 wynik to: -3
