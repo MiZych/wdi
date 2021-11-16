@@ -14,8 +14,8 @@ while True:
     else:
         if delta < 0:
             #Zapisujemy postać -b +/- sqrt.delta / 2a w postaci rzeczywistej i urojonej: -b/2a + +/- sqrt.delta / 2a
-            print("x1 = ", complex((float(-second) / (2.0 * float(first))), (abs(delta) ** (1/2) / (2.0 * first))))
-            print("x2 = ", complex((float(-second) / (2.0 * float(first))), -(abs(delta) ** (1/2) / (2.0 * first))))
+            print("z1 = ", complex((float(-second) / (2.0 * float(first))), (abs(delta) ** (1/2) / (2.0 * first))))
+            print("z2 = ", complex((float(-second) / (2.0 * float(first))), -(abs(delta) ** (1/2) / (2.0 * first))))
         else:
             sqrt_delta = sqrt(delta)
             x1 = ((-second + sqrt_delta) / 2 * first)
