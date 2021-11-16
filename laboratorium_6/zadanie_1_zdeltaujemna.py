@@ -8,7 +8,7 @@ while True:
     delta = (second ** 2) - (4*(first * third))
 
     if first == 0:
-        print("Równanie liniowe postaci: ", str(second) + "x", "+", third)
+        print("Równanie liniowe jest postaci: ", str(second) + "x", "+", third)
         resolve = ((0 - third) / second)
         print("Rozwiązaniem równania liniowego jest x =", resolve)
     else:
