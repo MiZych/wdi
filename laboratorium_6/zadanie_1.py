@@ -32,3 +32,4 @@ while True:
 #a = 0: 2x -2 wynik to: 1
 #delta > 0: 2x^2 + 8x -10 wynnik to: 1 i -5
 #delta = 0: x^2 + 6x + 9 wynik to: -3
+#delta < 0 2x^2 + 5x +9
