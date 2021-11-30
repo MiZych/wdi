@@ -27,6 +27,7 @@ def sum_prime(prime_numbers, numbers):
             res += "(" + str(primes) + " " + str(suma) + ")"
     print(res)
 sum_prime(prime_numbers, numbers)
+sum_prime(prime_numbers, [3, 5, 7, 9, 11, 13])
 
 
 
