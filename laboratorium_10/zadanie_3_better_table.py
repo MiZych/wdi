@@ -30,3 +30,4 @@ def create_board(height, width):
                 print(separating_line)
     print(ending_line)
 
+create_board(height, width)

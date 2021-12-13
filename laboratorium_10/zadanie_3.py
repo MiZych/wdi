@@ -22,7 +22,7 @@ def making_list(height):
 list_of_lines = making_list(height)
 
 
-def redirect(list_of_lines, width):
+def redirect_and_create(list_of_lines, width):
     start = "|"
     middle = "-"
     first_line = start + (((middle * 3) + start) * (width - 1)) + (middle * 3) + start
@@ -30,8 +30,10 @@ def redirect(list_of_lines, width):
     with open("output.txt", "a") as f:
         for i in range(len(list_of_lines)):
             if list_of_lines[i] == 1:
+                print(first_line)
                 print(first_line, file=f)
             elif list_of_lines[i] == 2:
+                print(width_line)
                 print(width_line, file=f)
 
-redirect(list_of_lines, width)
+redirect_and_create(list_of_lines, width)
