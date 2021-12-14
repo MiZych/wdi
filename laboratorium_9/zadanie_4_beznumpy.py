@@ -23,7 +23,6 @@ try:
 
     else:
         #Obliczanie wyznacznika macierzy A
-        print("Lista: ", lista_2D)
 
         def sariuss(lista_2D):
             first_diagonal = (lista_2D[0][0] * lista_2D[1][1] * lista_2D[2][2]) + (
@@ -65,7 +64,7 @@ try:
                 return det_A
 
         det_A = wyznacznik(lista_2D, number)
-        print("det_A", det_A)
+
         if det_A == 0:
             print("Wyznacznik główny równy 0!")
         else:
@@ -73,22 +72,19 @@ try:
             # Wyznacznik Wi
             frees = list(map(int, input("Wprowadź wyraz wolne do równanań: ").split()))
 
-        def wyznaczniki(x, lista_2D, det_A):
+        def wyznaczniki(x, lista_2D, det_A, numbers):
             lista_changes = deepcopy(lista_2D)
             for i in range(len(lista_changes[0])):
                 lista_changes[i][x] = frees[i]
-            suma_changes = 0
-            for elements in lista_changes:
-                suma_changes += len(elements)
-            suma_changes /= 4
-            det_Wi = int(wyznacznik(lista_changes, suma_changes))
+            lista_to_det_Wi = deepcopy(lista_changes)
+            det_Wi = wyznacznik(lista_to_det_Wi, numbers)
             resolve = det_Wi / det_A
             return resolve
 
         # Obliczanie x,y,z itd..
         lista_zmiennych = ["x", "y", "z", "w", "q", "e", "r", "t", "i", "o", "p"]
         for k in range(len(lista_2D[0])):
-            print(lista_zmiennych[k], "=", wyznaczniki(k, lista_2D, det_A), end=" ")
+            print(lista_zmiennych[k], "=", wyznaczniki(k, lista_2D, det_A, number), end=" ")
 
 except ValueError:
     print("Wprowadź poprawną ilość równań liniowych!")
