@@ -74,6 +74,8 @@ result_tower = []
 result_laufer = [0, ]
 pos_tower = 0
 pos_laufer = 0
+
+
 while True:
     try:
         pos_tower = all_tower_movements.index([0, 0], pos_tower)
@@ -117,25 +119,29 @@ def check_if_any_hitting(all_movements, hetmans, result_tower, result_laufer, nu
 check_if_any_hitting(all_movements, hetmans, result_tower, result_laufer, number)
 
 
-def print_number(k, j):
+
+def print_all(k, j):
     lista_gdzie_co_jest = []
     for args in dane[j:k]:
-        if args == hetmans[0] or args == hetmans[1] or args == hetmans[2] or args == hetmans[3]:
-            lista_gdzie_co_jest.append("|H|")
-        else:
-            lista_gdzie_co_jest.append("| |")
+        for hetmans_sets in hetmans:
+            if hetmans_sets == args:
+                lista_gdzie_co_jest.append("|H|")
+        lista_gdzie_co_jest.append("| |")
+    if lista_gdzie_co_jest.count("|H|") != 0:
+        lista_gdzie_co_jest.pop(-1)
     return lista_gdzie_co_jest
+
 
 try:
     k = 10000
     j = 9900
     lista_gdzie_co_jest = []
     for i in range(100):
-        lista_gdzie_co_jest.append(print_number(k, j))
+        lista_gdzie_co_jest.append(print_all(k, j))
         k -= 100
         j -= 100
 
-    with open("output.txt", "a") as f:
+    with open("output.txt", "w") as f:
         for k in range(100):
             print(lista_gdzie_co_jest[k], file=f)
 except IndexError:
