@@ -27,7 +27,8 @@ def silnia_iter(n):
 
 try:
     number = int(input("Prosze podac liczbe: "))
-    sys.setrecursionlimit(abs(number) + 2)
+    sys.setrecursionlimit(abs(number) + 2) #Ustawienie maksymalnej głębokości rekursji, ustawienie go zabopiega przechodzeniu programu do nieskonczonej rekursji.
+    #Domyslnie wynosi 1000
 except ValueError:
     print("Wprowadż cyfrę!")
     exit()
@@ -35,7 +36,7 @@ except ValueError:
 
 
 if number >= 0:
-    start_time = time.time()
+    start_time = time.time() #time.time() zwraca czas realizacji
     print("Silnia rekurencyjnie: ", silnia_rek(number))
     end_time = time.time()
     print("Rekurencyjnie zajęło: %s sekund" % (end_time - start_time))
