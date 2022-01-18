@@ -1,7 +1,6 @@
 from laboratorium_5.zadanie_11 import nwd, nww
 from laboratorium_5.zadanie_6 import check_if_prime
 from laboratorium_13.zadanie_2 import silnia_rek, silnia_iter
-import pytest
 
 
 
@@ -15,4 +14,4 @@ def test_prime():
 
 def test_silnia():
     assert silnia_rek(5) == silnia_iter(5)
-    assert silnia_rek(7) == silnia_iter(6)
+    assert silnia_rek(6) == silnia_iter(6)
