@@ -1,10 +1,10 @@
 #Program sprawdzający czydana liczb jest liczbą pierwszą
 from math import sqrt
-number = int(input("Podaj cyfrę: "))
+
 
 yes = "Pierwsza"
 no = "Nie pierwsza"
-def check(number):
+def check_if_prime(number):
     if number == 2:
         print(yes)
     elif number % 2 == 0 or number <= 1:
@@ -15,4 +15,7 @@ def check(number):
                 return no
         return yes
 
-print(check(number))
+
+if __name__ == '__main__':
+    number = int(input("Podaj cyfrę: "))
+    print(check_if_prime(number))
